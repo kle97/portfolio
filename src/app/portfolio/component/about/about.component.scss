@@ -1,0 +1,139 @@
+.about-container {
+  display: flex;
+  flex-flow: row wrap;
+  margin: auto auto 12rem;
+  padding-top: 14.4rem;
+  overflow: hidden;
+  .about-image-card {
+    width: 50%;
+    @media only screen and (max-width: 959.98px) {
+      width: 100%;
+      justify-content: center;
+    }
+
+    img {
+      max-width: 45.3rem;
+      max-height: 45rem;
+      width: 100%;
+      height: auto;
+    }
+
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    opacity: 0;
+  }
+
+  .flyInFromLeft {
+    animation: flyInFromLeft 1s ease forwards;
+
+    @keyframes flyInFromLeft {
+      from { transform: translateX(-100%); opacity: 0 }
+      to { transform: translateX(0%); opacity: 1 }
+    }
+  }
+
+  .flyInFromRight {
+    animation: flyInFromRight 1s ease forwards;
+
+    @keyframes flyInFromRight {
+      from { transform: translateX(100%); opacity: 0 }
+      to { transform: translateX(0%); opacity: 1 }
+    }
+  }
+
+  .about-description {
+    width: 50%;
+    opacity: 0;
+
+    @media only screen and (max-width: 959.98px) {
+      width: 100%;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+    }
+
+    .description {
+      @media only screen and (max-width: 959.98px) {
+        width: 100%;
+      }
+      max-width: 40rem;
+      word-break: break-word;
+      text-align: justify;
+      line-height: 3rem;
+      font-size: 120%;
+    }
+
+    .about-title {
+      @media only screen and (max-width: 959.98px) {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      font-size: 300%;
+      font-weight: 500;
+      color: #2962ff;
+      margin-bottom: 5rem;
+    }
+  }
+
+  .github-button {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 10rem;
+    height: 4rem;
+  }
+
+  .resume-button {
+    margin-left: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 10rem;
+    height: 4rem;
+  }
+
+  .github-button.mouse-over {
+    background: linear-gradient(to bottom, #2692ff 50%, white 50%) bottom;
+    background-size: 100% 200%;
+    animation: mouseOver 0.5s ease forwards;
+
+    @keyframes mouseOver {
+      from { background-position: bottom; color: black }
+      to { background-position: top; color: white }
+    }
+  }
+
+  .github-button.mouse-out {
+    background: linear-gradient(to top, #2692ff 50%, white 50%) bottom;
+    background-size: 100% 200%;
+
+    animation: mouseOut 0.5s ease forwards;
+
+    @keyframes mouseOut {
+      from { background-position: bottom; color: white }
+      to { background-position: top; color: black }
+    }
+  }
+
+  .resume-button.mouse-over {
+    background: linear-gradient(to bottom, #388e3c 50%, white 50%) bottom;
+    background-size: 100% 200%;
+    animation: mouseOver 0.5s ease forwards;
+
+    @keyframes mouseOver {
+      from { background-position: bottom; color: black }
+      to { background-position: top; color: white }
+    }
+  }
+
+  .resume-button.mouse-out {
+    background: linear-gradient(to top, #388e3c 50%, white 50%) bottom;
+    background-size: 100% 200%;
+    animation: mouseOut 0.5s ease forwards;
+
+    @keyframes mouseOut {
+      from { background-position: bottom; color: white }
+      to { background-position: top; color: black }
+    }
+  }
+}

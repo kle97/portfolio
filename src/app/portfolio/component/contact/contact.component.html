@@ -1,0 +1,49 @@
+<h1 id="contact" class="contact-title">Contact Me</h1>
+<div class="contact-container">
+  <form id="contactForm" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline" class="contact-form-field">
+      <mat-label>Your Name</mat-label>
+      <input matInput name="name" formControlName="name" autocomplete="OFF" required>
+      <mat-error *ngIf="name.invalid && (name.dirty || name.touched)">
+        <div *ngIf="name.errors?.['required']">Please enter your name.</div>
+        <div *ngIf="name.errors?.['maxlength']">Please limit to 120 characters.</div>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="contact-form-field">
+      <mat-label>Your Email</mat-label>
+      <input matInput name="email" formControlName="email" required>
+      <mat-error *ngIf="email.invalid && (email.dirty || email.touched)">
+        <div *ngIf="email.errors?.['required']">Please enter your email.</div>
+        <div *ngIf="email.errors?.['email']">Please enter a valid email address.</div>
+        <div *ngIf="email.errors?.['maxlength']">Please limit to 500 characters.</div>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="contact-form-field">
+      <mat-label>Your Message</mat-label>
+      <textarea matInput name="message"  rows="5" formControlName="message" autocomplete="OFF" required></textarea>
+      <mat-error
+        *ngIf="message.invalid && (message.dirty || message.touched)">
+        <div *ngIf="message.errors?.['required']">Please leave a message.</div>
+        <div *ngIf="message.errors?.['maxlength']">Please limit to 5000 characters.</div>
+      </mat-error>
+    </mat-form-field>
+
+    <div class="recaptcha">
+      <re-captcha formControlName="captchaToken"></re-captcha>
+      <mat-error
+        *ngIf="captchaToken.invalid && (captchaToken.dirty || captchaToken.touched)">
+        <div *ngIf="captchaToken.errors?.['required']">reCAPTCHA verification is required.</div>
+      </mat-error>
+    </div>
+
+    <div class="submit-button-section">
+      <button mat-raised-button color="primary" class="submit-button"
+              type="submit" form="contactForm"
+              [disabled]="!contactForm.valid">
+        Send Message
+      </button>
+    </div>
+  </form>
+</div>

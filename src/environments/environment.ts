@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  recaptchaSiteKey: "6LeBEI4gAAAAAOhekfpRfPKZmuviWeNJtpNTh8kp",
+  formSpreeUrl: "https://formspree.io/f/mwkyjljg",
 };
 
 /*

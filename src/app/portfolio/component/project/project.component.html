@@ -1,0 +1,210 @@
+<h1 id="projects" [ngClass]="'project-title ' + ((true | isInView | async) ? 'zoom-in-project-title' : '')">Personal Projects</h1>
+<div class="project-container">
+  <mat-card [ngClass]="'project-card ' + ((true | isInView | async) ? 'zoom-in' : '')">
+    <mat-card-header>
+      <mat-card-title>JBuy - Ecommerce website</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="project-content">
+      <div class="navigation-wrapper">
+        <div class="keen-slider keen-slider--vertical" #sliderRef1>
+          <div class="keen-slider__slide number-slide1">
+            <img src="https://res.cloudinary.com/khoale97/image/upload/portfolio/project1-1.png" alt="error"
+                 onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          </div>
+          <div class="keen-slider__slide number-slide2">
+            <img src="https://res.cloudinary.com/khoale97/image/upload/portfolio/project1-2.png" alt="error"
+                 onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          </div>
+          <div class="keen-slider__slide number-slide3">
+            <img src="https://res.cloudinary.com/khoale97/image/upload/portfolio/project1-3.png" alt="error"
+                 onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          </div>
+          <div class="keen-slider__slide number-slide4">
+            <img src="https://res.cloudinary.com/khoale97/image/upload/portfolio/project1-4.png" alt="error"
+                 onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          </div>
+          <div class="keen-slider__slide number-slide5">
+            <img src="https://res.cloudinary.com/khoale97/image/upload/portfolio/project1-5.png" alt="error"
+                 onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          </div>
+          <div class="keen-slider__slide number-slide6">
+            <img src="https://res.cloudinary.com/khoale97/image/upload/portfolio/project1-6.png" alt="error"
+                 onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          </div>
+          <div class="keen-slider__slide number-slide7">
+            <img src="https://res.cloudinary.com/khoale97/image/upload/portfolio/project1-7.png" alt="error"
+                 onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          </div>
+          <button mat-icon-button
+                  class="arrow arrow--left mat-elevation-z3"
+                  (click)="slider1.prev()">
+            <mat-icon>arrow_back_ios</mat-icon>
+          </button>
+          <button mat-icon-button
+                  *ngIf="slider1"
+                  class="arrow arrow--right mat-elevation-z3"
+                  (click)="slider1.next()">
+            <mat-icon>arrow_forward_ios</mat-icon>
+          </button>
+          <button mat-icon-button *ngIf="slider1"
+                  class="play-button" disableRipple
+                  (click)="toggleAutoSlide1()">
+            <mat-icon *ngIf="autoSlide1">pause_circle</mat-icon>
+            <mat-icon *ngIf="!autoSlide1">play_circle</mat-icon>
+          </button>
+        </div>
+
+        <div class="dots">
+          <button *ngFor="let slide of dotHelper1; let i = index"
+                  (click)="slider1.moveToIdx(i)"
+                  [ngClass]="'dot mat-elevation-z3 ' + (i === currentSlide1 ? 'active' : '')">
+          </button>
+        </div>
+      </div>
+
+      <div class="project-description">
+        <h3>An e-commerce website built on Spring Boot and Angular.</h3>
+        <p>Project features: product search with full text search, faceted search filter, and autocomplete for search
+          text.
+          The website also includes some functionalities like shopping cart, checkout, and review.</p>
+        <div class="project-technology">
+          <img height="32" width="32" src="https://res.cloudinary.com/khoale97/image/upload/portfolio/java-logo-2.png"
+               alt="error" matTooltip="JAVA" matTooltipPosition="above"
+               onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          <img height="32" width="32"
+               src="https://res.cloudinary.com/khoale97/image/upload/portfolio/typescript-logo-2.png"
+               alt="error" matTooltip="TYPESCRIPT" matTooltipPosition="above"
+               onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          <img height="32" width="32" src="https://res.cloudinary.com/khoale97/image/upload/portfolio/html-logo-2.png"
+               alt="error" matTooltip="HTML" matTooltipPosition="above"
+               onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          <img height="32" width="32" src="https://res.cloudinary.com/khoale97/image/upload/portfolio/css-logo-2.png"
+               alt="error" matTooltip="CSS" matTooltipPosition="above"
+               onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          <img height="32" width="32" src="https://res.cloudinary.com/khoale97/image/upload/portfolio/spring-logo-2.png"
+               alt="error" matTooltip="SPRING" matTooltipPosition="above"
+               onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          <img height="32" width="32"
+               src="https://res.cloudinary.com/khoale97/image/upload/portfolio/angular-logo-2.png"
+               alt="error" matTooltip="ANGULAR" matTooltipPosition="above"
+               onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+        </div>
+
+        <a href="https://jbuy-shop.herokuapp.com" target="_blank">
+          <button class="demo-button" mat-raised-button color="primary">
+            Demo
+          </button>
+        </a>
+        <a href="https://github.com/kle97/JBuy-Spring-Angular" target="_blank">
+          <button class="github-button" mat-raised-button color="accent">
+            Github
+          </button>
+        </a>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card [ngClass]="'project-card ' + ((true | isInView | async) ? 'zoom-in' : '')">
+    <mat-card-header>
+      <mat-card-title>Course Enrollment System</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="project-content">
+      <div class="navigation-wrapper">
+        <div class="keen-slider keen-slider--vertical" #sliderRef2>
+          <div class="keen-slider__slide number-slide1">
+            <img src="https://res.cloudinary.com/khoale97/image/upload/portfolio/project2-1.png" alt="error"
+                 onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          </div>
+          <div class="keen-slider__slide number-slide2">
+            <img src="https://res.cloudinary.com/khoale97/image/upload/portfolio/project2-2.png" alt="error"
+                 onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          </div>
+          <div class="keen-slider__slide number-slide3">
+            <img src="https://res.cloudinary.com/khoale97/image/upload/portfolio/project2-3.png" alt="error"
+                 onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          </div>
+          <div class="keen-slider__slide number-slide4">
+            <img src="https://res.cloudinary.com/khoale97/image/upload/portfolio/project2-4.png" alt="error"
+                 onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          </div>
+          <div class="keen-slider__slide number-slide5">
+            <img src="https://res.cloudinary.com/khoale97/image/upload/portfolio/project2-5.png" alt="error"
+                 onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          </div>
+          <div class="keen-slider__slide number-slide6">
+            <img src="https://res.cloudinary.com/khoale97/image/upload/portfolio/project2-6.png" alt="error"
+                 onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          </div>
+          <button mat-icon-button
+                  class="arrow arrow--left mat-elevation-z3"
+                  (click)="slider2.prev()">
+            <mat-icon>arrow_back_ios</mat-icon>
+          </button>
+          <button mat-icon-button
+                  *ngIf="slider2"
+                  class="arrow arrow--right mat-elevation-z3"
+                  (click)="slider2.next()">
+            <mat-icon>arrow_forward_ios</mat-icon>
+          </button>
+          <button mat-icon-button *ngIf="slider2"
+                  class="play-button" disableRipple
+                  (click)="toggleAutoSlide2()">
+            <mat-icon *ngIf="autoSlide2">pause_circle</mat-icon>
+            <mat-icon *ngIf="!autoSlide2">play_circle</mat-icon>
+          </button>
+        </div>
+
+        <div class="dots">
+          <button *ngFor="let slide of dotHelper2; let i = index"
+                  (click)="slider2.moveToIdx(i)"
+                  [ngClass]="'dot mat-elevation-z3 ' + (i === currentSlide2 ? 'active' : '')">
+          </button>
+        </div>
+      </div>
+
+      <div class="project-description">
+        <h3>A course enrollment system built on Spring Boot and Angular.</h3>
+        <p>Project features: JWT based authentication, admin dashboard,
+          courses search with filter, display results with pagination and infinite scroll.
+          The website also includes some functionalities like shopping cart, enroll, and drop courses.</p>
+        <div class="project-technology">
+          <img height="32" width="32" src="https://res.cloudinary.com/khoale97/image/upload/portfolio/java-logo-2.png"
+               alt="error" matTooltip="JAVA" matTooltipPosition="above"
+               onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          <img height="32" width="32"
+               src="https://res.cloudinary.com/khoale97/image/upload/portfolio/typescript-logo-2.png"
+               alt="error" matTooltip="TYPESCRIPT" matTooltipPosition="above"
+               onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          <img height="32" width="32" src="https://res.cloudinary.com/khoale97/image/upload/portfolio/html-logo-2.png"
+               alt="error" matTooltip="HTML" matTooltipPosition="above"
+               onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          <img height="32" width="32" src="https://res.cloudinary.com/khoale97/image/upload/portfolio/css-logo-2.png"
+               alt="error" matTooltip="CSS" matTooltipPosition="above"
+               onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          <img height="32" width="32" src="https://res.cloudinary.com/khoale97/image/upload/portfolio/spring-logo-2.png"
+               alt="error" matTooltip="SPRING" matTooltipPosition="above"
+               onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          <img height="32" width="32"
+               src="https://res.cloudinary.com/khoale97/image/upload/portfolio/angular-logo-2.png"
+               alt="error" matTooltip="ANGULAR" matTooltipPosition="above"
+               onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+          <img height="32" width="32"
+               src="https://res.cloudinary.com/khoale97/image/upload/portfolio/docker-logo-2.png"
+               alt="error" matTooltip="DOCKER" matTooltipPosition="above"
+               onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+        </div>
+
+        <a href="https://course-enrollment-system.herokuapp.com" target="_blank">
+          <button class="demo-button" mat-raised-button color="primary">
+            Demo
+          </button>
+        </a>
+        <a href="https://github.com/kle97/SpringBoot-Angular-Enrollment-System" target="_blank">
+          <button class="github-button" mat-raised-button color="accent">
+            Github
+          </button>
+        </a>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

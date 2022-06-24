@@ -1,0 +1,88 @@
+.fill-remaining-spacer {
+  flex: auto;
+}
+
+.toolbar-container {
+  background-color: #363636;
+}
+
+.toolbar-wrapper {
+  background-color: #363636;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.toolbar {
+  background-color: #363636;
+  max-width: 125rem;
+  margin: auto;
+}
+
+.menu-button {
+  background-color: #363636;
+  color: white;
+  font-size: 105%;
+}
+
+.title-button {
+  background-color: #363636;
+  color: white;
+  font-size: 130%;
+  padding-right: 2rem;
+  @media only screen and (max-width: 959.98px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.sidenav-menu {
+  ::ng-deep .mat-button {
+    font-size: 135%;
+    border-radius: 0;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.sidenav-menu {
+  width: 100%;
+}
+
+.sidenav-close-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+::ng-deep .mat-drawer-container.mat-drawer-container-has-open {
+  //background-color: white;
+  max-height: calc(100vh - 12.6rem);
+  z-index: 1050;
+}
+
+::ng-deep .mat-drawer-container {
+  //background-color: white;
+}
+
+.content {
+  display: flex;
+  max-width: 125rem;
+  margin: auto;
+  flex-direction: column;
+  min-height: calc(100vh - 6.4rem - 13.56rem);
+  .main {
+    flex: 1 0 auto;
+    margin-left: 1.6rem;
+    margin-right: 1.6rem;
+  }
+}
+
+::ng-deep .mat-drawer-content {
+  overflow: unset !important;
+}
+
+::ng-deep .mat-drawer-container {
+  overflow: unset !important;
+}

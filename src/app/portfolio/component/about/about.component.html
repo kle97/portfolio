@@ -1,0 +1,32 @@
+<div id="about" class="about-container">
+  <div [ngClass]="'about-image-card ' + ((true | isInView | async) ? 'flyInFromLeft' : '')">
+    <img src="https://res.cloudinary.com/khoale97/image/upload/portfolio/avatar-style-card.png" alt="error"
+         onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+  </div>
+  <div [ngClass]="'about-description ' + ((true | isInView | async) ? 'flyInFromRight' : '')">
+    <h1 class="about-title">About me</h1>
+    <p class="description">I'm a web developer from Orange county, California. My core skills include
+      Java, Javascript, Typescript, HTML, Sass, Spring Boot and Angular.
+      I have a passion for programming and system design.
+      I’m always eager to learn about the newest technologies and frameworks,
+      so I would make a great addition to any team.
+    </p>
+    <a href="https://github.com/kle97" target="_blank">
+      <button mat-raised-button (mouseover)="githubMouseOver = true; githubMouseOut = false"
+              (mouseout)="githubMouseOut = true; githubMouseOver = false"
+              [ngClass]="'github-button ' + (githubMouseOver ? 'mouse-over' : '')
+                                        + (githubMouseOut ? 'mouse-out' : '')">
+        GitHub
+      </button>
+    </a>
+
+    <a routerLink="/resume" target="_blank">
+      <button mat-raised-button (mouseover)="resumeMouseOver = true; resumeMouseOut = false"
+              (mouseout)="resumeMouseOut = true; resumeMouseOver = false"
+              [ngClass]="'resume-button ' + (resumeMouseOver ? 'mouse-over' : '')
+                                        + (resumeMouseOut ? 'mouse-out' : '')">
+        Resume
+      </button>
+    </a>
+  </div>
+</div>

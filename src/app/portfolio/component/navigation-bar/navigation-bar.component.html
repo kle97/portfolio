@@ -1,0 +1,75 @@
+<!--<app-introduction></app-introduction>-->
+<div class="toolbar-container" *appVar="{xSmall: 'xs' | matchMedia | async} as media">
+  <div id="toolbar-wrapper" class="toolbar-wrapper">
+    <mat-toolbar class="toolbar" color="primary">
+      <button mat-button disableRipple class="title-button" routerLink="/"
+              (click)="scrollTo('body')">{{title}}</button>
+
+      <span class="fill-remaining-spacer"></span>
+
+      <ng-container *ngIf="media.xSmall; else notXSmall">
+        <button mat-icon-button (click)="toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </ng-container>
+
+      <ng-template #notXSmall>
+        <button mat-flat-button disableRipple class="menu-button" (click)="scrollTo('about')">
+          About
+        </button>
+        <a routerLink="/resume" target="_blank">
+          <button mat-flat-button disableRipple class="menu-button">
+            Resume
+          </button>
+        </a>
+        <button mat-flat-button disableRipple class="menu-button" (click)="scrollTo('projects')">
+          Projects
+        </button>
+        <button mat-flat-button disableRipple class="menu-button" (click)="scrollTo('contact')">
+          Contact
+        </button>
+      </ng-template>
+    </mat-toolbar>
+  </div>
+
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav mode="over" opened="false"
+                 [fixedInViewport]="true"
+                 [autoFocus]="false" class="sidenav-menu">
+      <div class="sidenav-close-button">
+        <button mat-icon-button (click)="toggle()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+
+      <div class="sidenav-menu" >
+        <button mat-button disableRipple (click)="sidenav.toggle(); scrollTo('about')">
+          About
+        </button>
+        <a href="javascript:void(0)" target="_blank">
+          <button mat-button disableRipple (click)="sidenav.toggle()">
+            Resume
+          </button>
+        </a>
+        <button mat-button disableRipple (click)="sidenav.toggle(); scrollTo('projects')">
+          Projects
+        </button>
+        <button mat-button disableRipple (click)="sidenav.toggle(); scrollTo('contact')">
+          Contact
+        </button>
+      </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="content">
+      <app-scroll-up-button></app-scroll-up-button>
+      <div class="main">
+        <ng-content></ng-content>
+      </div>
+
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+  <div>
+    <app-footer></app-footer>
+  </div>
+</div>

@@ -1,0 +1,83 @@
+.skill-title {
+  font-size: 250%;
+  font-weight: 500;
+  color: #2962ff;
+  margin-bottom: 4rem;
+  opacity: 0;
+}
+
+.zoom-in-skill-title {
+  animation: zoom-in 1s ease-in forwards;
+
+  @keyframes zoom-in {
+    from { transform: scale(0); opacity: 0 }
+    to { transform: scale(1, 1); opacity: 1 }
+  }
+}
+
+.skill-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding-top: 2rem;
+  margin-bottom: 6rem;
+
+  .skill-card {
+    opacity: 0;
+    margin: 2rem 2rem 2rem 2rem;
+    padding: 0.8rem;
+    max-width: 6.4rem;
+
+    ::ng-deep .mat-card-content {
+      text-align: center !important;
+      font-size: 75%;
+      word-wrap: break-word;
+    }
+  }
+
+  .card1 {
+    animation: fadeIn 0.1s ease forwards;
+  }
+
+  .card2 {
+    animation: fadeIn 0.1s ease 1s forwards;
+  }
+
+  .card3 {
+    animation: fadeIn 0.1s ease 1.1s forwards;
+  }
+
+  .card4 {
+    animation: fadeIn 0.1s ease 1.2s forwards;
+  }
+
+  .card5 {
+    animation: fadeIn 0.1s ease 1.3s forwards;
+  }
+
+  .card6 {
+    animation: fadeIn 0.1s ease 1.4s forwards;
+  }
+
+  .card7 {
+    animation: fadeIn 0.1s ease 1.5s forwards;
+  }
+
+  .card8 {
+    animation: fadeIn 0.1s ease 1.6s forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0 }
+    to { opacity: 1 }
+  }
+}
+
+.skill-fly-container {
+  animation: flyIn 1s ease-out;
+
+  @keyframes flyIn {
+    from { transform: translateX(-100%) }
+    to { transform: translateX(0) }
+  }
+}

@@ -1,0 +1,110 @@
+.introduction-container {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  height: calc(100vh - 6.4rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+
+  .greeting {
+    h1 {
+      width: fit-content;
+      white-space: nowrap;
+      overflow: hidden;
+      margin: auto;
+      line-height: 7rem;
+      font-size: 400%;
+      border-right: 0.5rem solid #363636;
+      @media only screen and (max-width: 599.98px) {
+        line-height: 4rem;
+        font-size: 300%;
+      }
+      @media only screen and (max-width: 439.98px) {
+        line-height: 3rem;
+        font-size: 210%;
+      }
+      @media only screen and (max-width: 319.98px) {
+        line-height: 2.5rem;
+        font-size: 170%;
+      }
+    }
+
+    .row1 {
+      border-right-color: transparent;
+      animation: typewriter1 2.5s steps(25) 0.5s 1 normal both, blinkTextCursor1 0.5s normal 1, caret1 2.5s normal 0.5s;
+
+      @keyframes typewriter1 {
+        from { width: 0 }
+        to { width: 72% }
+      }
+
+      @keyframes caret1 {
+        from, to { border-right-color: #363636; }
+      }
+
+      @keyframes blinkTextCursor1 {
+        from { border-right-color: #363636; }
+        to { border-right-color: transparent; }
+      }
+    }
+
+    .row2 {
+      .web {
+        color: #2962ff;
+      }
+
+      border-right-color: transparent;
+      animation: typewriter2 3s steps(25) 3s 1 normal both, blinkTextCursor2 1.5s normal 5.5s infinite, caret2 3s normal 3s;
+
+      @keyframes typewriter2 {
+        from { width: 0 }
+        to { width: 100% }
+      }
+
+      @keyframes caret2 {
+        from, to { border-right-color: #363636; }
+      }
+
+      @keyframes blinkTextCursor2 {
+        from, to { border-right-color: transparent; }
+        50% { border-right-color: #363636; }
+      }
+    }
+  }
+
+  .down-button {
+    position: absolute;
+    margin: auto;
+    bottom: 6rem;
+    @media only screen and (max-width: 699.98px) {
+      bottom: 3rem;
+    }
+
+    .mat-icon-button {
+      background-color: whitesmoke;
+      transform: scale(1.5, 1.5);
+      opacity: 0;
+
+      @media only screen and (max-width: 699.98px) {
+        transform: scale(1, 1);
+
+        animation: bubble-small 1.5s ease 6.5s infinite;
+
+        @keyframes bubble-small {
+          from, to { transform: scale(1, 1); opacity: 1 }
+          50% { transform: scale(1.5, 1.5); opacity: 0.8 }
+        }
+      }
+
+      animation: bubble 1.5s ease 6.5s infinite;
+
+      @keyframes bubble {
+        from, to { transform: scale(1.5, 1.5); opacity: 1 }
+        50% { transform: scale(2.2, 2.2); opacity: 0.8 }
+      }
+    }
+  }
+}
+

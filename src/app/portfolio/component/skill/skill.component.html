@@ -1,0 +1,83 @@
+<h1 id="skill" [ngClass]="'skill-title ' + ((true | isInView: 200 | async) ? 'zoom-in-skill-title' : '')">Languages, Platforms and Frameworks</h1>
+<div [ngClass]="'skill-container ' + ((true | isInView: 100 | async) ? 'skill-fly-container': '')">
+  <mat-card [ngClass]="'skill-card ' + ((true | isInView | async) ? 'card1 ': '')
+                      + (hover === 1 ? 'mat-elevation-z6': 'mat-elevation-z0')"
+            (mouseover)="hover = 1"
+            (mouseout)="hover = 0">
+    <img height="64" width="64" src="https://res.cloudinary.com/khoale97/image/upload/portfolio/java-logo-2.png" alt="error"
+         onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+    <mat-card-content>
+      <b>JAVA</b>
+    </mat-card-content>
+  </mat-card>
+  <mat-card [ngClass]="'skill-card ' + ((true | isInView | async) ? 'card2 ': '')
+                      + (hover === 2 ? 'mat-elevation-z6': 'mat-elevation-z0')"
+            (mouseover)="hover = 2"
+            (mouseout)="hover = 0">
+    <img height="64" width="64" src="https://res.cloudinary.com/khoale97/image/upload/portfolio/javascript-logo-2.png" alt="error"
+         onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+    <mat-card-content>
+      <b>JAVASCRIPT</b>
+    </mat-card-content>
+  </mat-card>
+  <mat-card [ngClass]="'skill-card ' + ((true | isInView | async) ? 'card3 ': '')
+                      + (hover === 3 ? 'mat-elevation-z6': 'mat-elevation-z0')"
+            (mouseover)="hover = 3"
+            (mouseout)="hover = 0">
+    <img height="64" width="64" src="https://res.cloudinary.com/khoale97/image/upload/portfolio/typescript-logo-2.png" alt="error"
+         onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+    <mat-card-content>
+      <b>TYPESCRIPT</b>
+    </mat-card-content>
+  </mat-card>
+  <mat-card [ngClass]="'skill-card ' + ((true | isInView | async) ? 'card4 ': '')
+                      + (hover === 4 ? 'mat-elevation-z6': 'mat-elevation-z0')"
+            (mouseover)="hover = 4"
+            (mouseout)="hover = 0">
+    <img height="64" width="64" src="https://res.cloudinary.com/khoale97/image/upload/portfolio/html-logo-2.png" alt="error"
+         onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+    <mat-card-content>
+      <b>HTML</b>
+    </mat-card-content>
+  </mat-card>
+  <mat-card [ngClass]="'skill-card ' + ((true | isInView | async) ? 'card5 ': '')
+                      + (hover === 5 ? 'mat-elevation-z6': 'mat-elevation-z0')"
+            (mouseover)="hover = 5"
+            (mouseout)="hover = 0">
+    <img height="64" width="64" src="https://res.cloudinary.com/khoale97/image/upload/portfolio/css-logo-2.png" alt="error"
+         onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+    <mat-card-content>
+      <b>CSS</b>
+    </mat-card-content>
+  </mat-card>
+  <mat-card [ngClass]="'skill-card ' + ((true | isInView | async) ? 'card6 ': '')
+                      + (hover === 6 ? 'mat-elevation-z6': 'mat-elevation-z0')"
+            (mouseover)="hover = 6"
+            (mouseout)="hover = 0">
+    <img height="64" width="64" src="https://res.cloudinary.com/khoale97/image/upload/portfolio/spring-logo-2.png" alt="error"
+         onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+    <mat-card-content>
+      <b>SPRING</b>
+    </mat-card-content>
+  </mat-card>
+  <mat-card [ngClass]="'skill-card ' + ((true | isInView | async) ? 'card7 ': '')
+                      + (hover === 7 ? 'mat-elevation-z6': 'mat-elevation-z0')"
+            (mouseover)="hover = 7"
+            (mouseout)="hover = 0">
+    <img height="64" width="64" src="https://res.cloudinary.com/khoale97/image/upload/portfolio/angular-logo-2.png" alt="error"
+         onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+    <mat-card-content>
+      <b>ANGULAR</b>
+    </mat-card-content>
+  </mat-card>
+  <mat-card [ngClass]="'skill-card ' + ((true | isInView | async) ? 'card8 ': '')
+                      + (hover === 8 ? 'mat-elevation-z6': 'mat-elevation-z0')"
+            (mouseover)="hover = 8"
+            (mouseout)="hover = 0">
+    <img height="64" width="64" src="https://res.cloudinary.com/khoale97/image/upload/portfolio/docker-logo-2.png" alt="error"
+         onerror="this.src='https://res.cloudinary.com/khoale97/image/upload/portfolio/missing-image.png';">
+    <mat-card-content>
+      <b>DOCKER</b>
+    </mat-card-content>
+  </mat-card>
+</div>
